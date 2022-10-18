@@ -14,7 +14,6 @@ const getEpisodes = (urls) => {
 };
 
 const createCard = (character) => {
-  // Elements created
   const card = document.createElement("div");
   card.classList.add("card-container");
   const cardImage = document.createElement("img");
@@ -30,7 +29,6 @@ const createCard = (character) => {
   const cardEpisodes = document.createElement("div");
   cardEpisodes.classList.add("card-episodes");
 
-  // Adding content to elements
   cardImage.src = character.image;
   cardName.textContent = character.name;
   cardStatus.textContent = character.status;
@@ -41,7 +39,6 @@ const createCard = (character) => {
     cardEpisodes.textContent = getEpisodes(character.episode).join(", ");
   }
 
-  // Appendchilds
   card.appendChild(cardImage);
   cardData.appendChild(cardName);
   cardData.appendChild(cardStatus);
@@ -62,6 +59,7 @@ fetch("https://rickandmortyapi.com/api/character")
     });
   });
 
+// ParticleJS library functionality
 particlesJS.load("particles-js", "assets/particles.json", function() {
   console.log("callback - particles.js config loaded");
 });
